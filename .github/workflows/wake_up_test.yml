@@ -1,10 +1,10 @@
-name: Test GitHub Actions Wake-Up
+name: Wake-Up Render Every Minute
 
 on:
   schedule:
     # ตั้งให้ทำงานทุก 1 นาที
     - cron: '*/1 * * * *'
-
+  workflow_dispatch: # ทำให้สามารถ trigger ด้วยตัวเองแบบ manual ได้
 jobs:
   wakeup_test:
     runs-on: ubuntu-latest
