@@ -1,9 +1,9 @@
 name: Test GitHub Actions Wake-Up
 
 on:
-  schedule:
-    # ตั้งค่าให้ทำงานทุก 5 นาทีเพื่อทดสอบ (ปรับเป็น 15 นาทีหากต้องการใช้งานจริง)
-    - cron: '*/5 * * * *'
+  push: # Trigger when there's a new push
+    branches:
+      - main
 
 jobs:
   wakeup_test:
