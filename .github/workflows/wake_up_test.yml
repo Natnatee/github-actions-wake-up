@@ -1,9 +1,9 @@
 name: Test GitHub Actions Wake-Up
 
 on:
-  push: # Trigger when there's a new push
-    branches:
-      - main
+  schedule:
+    # ตั้งให้ทำงานทุก 1 นาที
+    - cron: '*/1 * * * *'
 
 jobs:
   wakeup_test:
