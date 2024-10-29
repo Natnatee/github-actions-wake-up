@@ -1,0 +1,16 @@
+name: Test GitHub Actions Wake-Up
+
+on:
+  schedule:
+    # ตั้งค่าให้ทำงานทุก 5 นาทีเพื่อทดสอบ (ปรับเป็น 15 นาทีหากต้องการใช้งานจริง)
+    - cron: '*/5 * * * *'
+
+jobs:
+  wakeup_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Test Request
+        env:
+          TEST_URL: "https://httpbin.org/get"
+        run: |
+          curl -X GET "$TEST_URL"
